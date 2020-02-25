@@ -18,5 +18,5 @@ Simple PostgreSQL client.
 
 ### Remarks
 
-* Windows vcpkg libpq static ``9.6.3``  
-* homebrew libpq static ``12.2``  
+* Windows: vcpkg libpq static ``9.6.3``  
+* Mac: homebrew libpq static ``12.2``  
