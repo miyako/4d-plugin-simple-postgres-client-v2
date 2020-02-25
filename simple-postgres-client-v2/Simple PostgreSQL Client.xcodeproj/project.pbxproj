@@ -32,14 +32,19 @@
 		D1631F76240510EC00A9194C /* libjsoncpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F74240510EC00A9194C /* libjsoncpp.a */; };
 		D1631F7C2405116F00A9194C /* LDAP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F7B2405116F00A9194C /* LDAP.framework */; };
 		D1631F822405129A00A9194C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F812405129A00A9194C /* libresolv.tbd */; };
-		D1B435BF240548AD0045B8DF /* libpq.5.12.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B435BE240548AD0045B8DF /* libpq.5.12.dylib */; };
+		D1CA001C240554F1006FA546 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F792405115B00A9194C /* libcrypto.a */; };
+		D1CA001D240554F1006FA546 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F772405114F00A9194C /* libssl.a */; };
+		D1CA001E24055516006FA546 /* libpq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F73240510EC00A9194C /* libpq.a */; };
+		D1CA002024055552006FA546 /* Kerberos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CA001F24055551006FA546 /* Kerberos.framework */; };
+		D1CA00212405585E006FA546 /* libpgcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F952405163000A9194C /* libpgcommon.a */; };
+		D1CA002624055941006FA546 /* libpgport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1631F912405163000A9194C /* libpgport.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D134D4AB1A030B7A008D14EF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = ..;
 			dstSubfolderSpec = 7;
 			files = (
 				D134D4AC1A030BA0008D14EF /* manifest.json in CopyFiles */,
@@ -94,6 +99,8 @@
 		D1631F952405163000A9194C /* libpgcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpgcommon.a; path = a/libpgcommon.a; sourceTree = "<group>"; };
 		D1631F9B2405179A00A9194C /* libpq.5.12.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.12.dylib; path = lib/libpq.5.12.dylib; sourceTree = "<group>"; };
 		D1B435BE240548AD0045B8DF /* libpq.5.12.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpq.5.12.dylib; path = "test/Plugins/Simple PostgreSQL Client.bundle/Contents/MacOS/libpq.5.12.dylib"; sourceTree = "<group>"; };
+		D1CA001F24055551006FA546 /* Kerberos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kerberos.framework; path = System/Library/Frameworks/Kerberos.framework; sourceTree = SDKROOT; };
+		D1CA0024240558C8006FA546 /* libpgcommon_shlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpgcommon_shlib.a; path = a/libpgcommon_shlib.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +108,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1B435BF240548AD0045B8DF /* libpq.5.12.dylib in Frameworks */,
+				D1CA002624055941006FA546 /* libpgport.a in Frameworks */,
+				D1CA00212405585E006FA546 /* libpgcommon.a in Frameworks */,
+				D1CA001E24055516006FA546 /* libpq.a in Frameworks */,
+				D1CA001C240554F1006FA546 /* libcrypto.a in Frameworks */,
+				D1CA001D240554F1006FA546 /* libssl.a in Frameworks */,
 				D1631F76240510EC00A9194C /* libjsoncpp.a in Frameworks */,
 				D1631F822405129A00A9194C /* libresolv.tbd in Frameworks */,
+				D1CA002024055552006FA546 /* Kerberos.framework in Frameworks */,
 				D1631F7C2405116F00A9194C /* LDAP.framework in Frameworks */,
 				D130064F12F02D9700702C0E /* Cocoa.framework in Frameworks */,
 			);
@@ -196,6 +208,8 @@
 		D16FBB3C22A4C07E008F0416 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1CA0024240558C8006FA546 /* libpgcommon_shlib.a */,
+				D1CA001F24055551006FA546 /* Kerberos.framework */,
 				D1631F9B2405179A00A9194C /* libpq.5.12.dylib */,
 				D1B435BE240548AD0045B8DF /* libpq.5.12.dylib */,
 				D1631F932405163000A9194C /* libecpg.a */,
@@ -372,7 +386,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
@@ -426,7 +440,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
@@ -477,7 +491,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
@@ -525,7 +539,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -575,7 +589,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -625,7 +639,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;

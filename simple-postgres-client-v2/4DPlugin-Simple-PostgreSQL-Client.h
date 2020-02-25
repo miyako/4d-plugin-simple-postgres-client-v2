@@ -21,6 +21,8 @@
 #include "4DPlugin-JSON.h"
 
 #if VERSIONMAC
+extern unsigned char pg_tolower(unsigned char ch);
+extern bool pg_strong_random(void *buf, size_t len);
 #include <iconv.h>
 #define UTF32NATIVE "UTF-32LE"
 #endif

@@ -17,85 +17,9 @@
 		<data>
 		mM8UM+UEC3yfrxDJ9uu1xLxtdbc=
 		</data>
-		<key>Resources/manifest.json</key>
-		<data>
-		YcBakDh3pFg8RM/brq+yYsMqErM=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>MacOS/libcom_err.3.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			AjXqWUypxyXpskSKfSB1GR3EQag=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libcom_err.3" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libcrypto.1.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			+bs09xJrY05iwDo0yBj7YaMuSZw=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libcrypto.1" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libgssapi_krb5.2.2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			5Npne1+hkRRM0SjzFzK+CIUKqWA=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libgssapi_krb5" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libk5crypto.3.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			neBp2MuYgSfO+VIRHle6SZoX51w=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libk5crypto.3" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libkrb5.3.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			qqhpPA3go92aFUrLHLZp4ZfLNvM=
-			</data>
-			<key>requirement</key>
-			<string>identifier libkrb5 and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libkrb5support.1.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			UQIakHQpF9KPhhU3Ec25NS365K8=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libkrb5support.1" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libpq.5.12.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			BK8mCVIRx5RvyJRKIYzA+OeQF8E=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libpq.5" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
-		<key>MacOS/libssl.1.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			1HY1LaAVBmlDw8//tHaCkq0FQ7Y=
-			</data>
-			<key>requirement</key>
-			<string>identifier "libssl.1" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
-		</dict>
 		<key>QuickLook/Thumbnail.png</key>
 		<dict>
 			<key>hash</key>
@@ -131,17 +55,6 @@
 			aLQd1C/2tgKKGW0Az9DMnTCSVbuNDoIYGsn+SJrXJCs=
 			</data>
 		</dict>
-		<key>Resources/manifest.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			YcBakDh3pFg8RM/brq+yYsMqErM=
-			</data>
-			<key>hash2</key>
-			<data>
-			CmMZMLur9AychZxpeoKuXDQNgHerSdYd1130JznDz5I=
-			</data>
-		</dict>
 		<key>Windows/Simple PostgreSQL Client.4DX</key>
 		<dict>
 			<key>hash</key>
@@ -163,6 +76,15 @@
 			<data>
 			KmaYnWxN9hzVVqkKNyz/C5g5DK8K8ecyuCvoPV8wzSY=
 			</data>
+		</dict>
+		<key>manifest.json</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Lnj8pb0jB4Xowsab09Or1ZhLLQQ=
+			</data>
+			<key>requirement</key>
+			<string>identifier manifest and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
 		</dict>
 	</dict>
 	<key>rules</key>
