@@ -5,4 +5,4 @@ Simple PostgreSQL client.
 #### libraries
 
 * Windows vcpkg libpq static ``9.6.3``  
-* homebrew libpq ``12.2``  
+* homebrew libpq static ``12.2``  
