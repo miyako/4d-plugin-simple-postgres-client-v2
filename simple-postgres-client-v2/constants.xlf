@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<xliff version="1.0" xmlns:d4="http://www.4d.com/d4-ns">
+    <header>
+        <note>Simple PostgreSQL Client</note>
+    </header>
+    <group resname="themes">
+        <trans-unit id="" resname="A13A63559EE24C4C9429950F52D62856" translate="no">
+            <source>PQ Result Format</source>
+        </trans-unit>
+    </group>
+    <group restype="x-4DK#" d4:groupName="A13A63559EE24C4C9429950F52D62856">
+        <trans-unit d4:value="0:L" id="A13A63559EE24C4C9429950F52D62856.1">
+            <source>PQ_RESULT_TEXT</source>
+        </trans-unit>
+        <trans-unit d4:value="1:L" id="A13A63559EE24C4C9429950F52D62856.2">
+            <source>PQ_RESULT_BINARY</source>
+        </trans-unit>
+    </group>
+</xliff>

@@ -1,0 +1,17 @@
+{
+	"themes": [
+		{
+			"theme": "PQ Result Format",
+			"constants": [
+                {
+                    "name": "PQ_RESULT_TEXT",
+                    "value": "0:L"
+                },
+                {
+                    "name": "PQ_RESULT_BINARY",
+                    "value": "1:L"
+                }
+            ]
+        }
+	]
+}
