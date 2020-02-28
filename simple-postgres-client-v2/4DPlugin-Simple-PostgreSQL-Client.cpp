@@ -187,7 +187,7 @@ void PQ_EXECUTE(PA_PluginParameters params) {
             
             result = PQexecParams(conn,
                                      (const char *)command.c_str(),
-                                     paramCount-1,
+                                     paramCount,
                                      &paramTypes[0],
                                      &paramValues[0],
                                      &paramLengths[0],

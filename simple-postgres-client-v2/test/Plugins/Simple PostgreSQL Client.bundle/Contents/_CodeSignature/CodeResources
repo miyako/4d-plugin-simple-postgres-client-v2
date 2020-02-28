@@ -8,7 +8,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S4ZDcsRNIBMvE8HBd4tR35IKTrE=
+			U+S0j0xzWlBviiQNfoMf6FBBqVM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -16,6 +16,10 @@
 		<key>Resources/constants.xlf</key>
 		<data>
 		mM8UM+UEC3yfrxDJ9uu1xLxtdbc=
+		</data>
+		<key>Resources/manifest.json</key>
+		<data>
+		YcBakDh3pFg8RM/brq+yYsMqErM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -35,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S4ZDcsRNIBMvE8HBd4tR35IKTrE=
+			U+S0j0xzWlBviiQNfoMf6FBBqVM=
 			</data>
 			<key>hash2</key>
 			<data>
-			P81tE9CHP/tstheg8mctp3bvo1zuujIPMujsAmzkx6I=
+			piioTUnr+7bIi6ZvHjOJmc/Mu++QECsfBVVAjNb3QeM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -55,36 +59,38 @@
 			aLQd1C/2tgKKGW0Az9DMnTCSVbuNDoIYGsn+SJrXJCs=
 			</data>
 		</dict>
+		<key>Resources/manifest.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YcBakDh3pFg8RM/brq+yYsMqErM=
+			</data>
+			<key>hash2</key>
+			<data>
+			CmMZMLur9AychZxpeoKuXDQNgHerSdYd1130JznDz5I=
+			</data>
+		</dict>
 		<key>Windows/Simple PostgreSQL Client.4DX</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NCTBvUJaEI1Q+4mH6OhKUmRD+HM=
+			FPE0Im6nG7D/BW1FqjGeUGMgAsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			7qi/1mVyrfWd6XufiEoEsenkRqfJawPfQjil5jMMsS8=
+			7HKO4kuCf03d0dX3BKZFp7JB6SFSxHVFoQHThbZMlVA=
 			</data>
 		</dict>
 		<key>Windows64/Simple PostgreSQL Client.4DX</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zlAqraTmuxeYSALF7aG4I/Gf+Y8=
+			ppXzRJzTSmFA0PBXkDu3lNcFiAY=
 			</data>
 			<key>hash2</key>
 			<data>
-			KmaYnWxN9hzVVqkKNyz/C5g5DK8K8ecyuCvoPV8wzSY=
+			QKjpUscSVTS3NoHXCaFAJtdhZs2JKuWaPdHOrMet9ho=
 			</data>
-		</dict>
-		<key>manifest.json</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			Lnj8pb0jB4Xowsab09Or1ZhLLQQ=
-			</data>
-			<key>requirement</key>
-			<string>identifier manifest and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
 		</dict>
 	</dict>
 	<key>rules</key>
