@@ -3,5 +3,6 @@
 $connect:="user=miyako dbname=postgres"
 $SQL:="SELECT * FROM users"
 
-$status:=PQ EXECUTE ($connect;$SQL)
+$params:=New collection:C1472("ccc")
+$status:=PQ EXECUTE($connect;$SQL;$params)
 

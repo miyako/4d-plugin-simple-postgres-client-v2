@@ -37,7 +37,7 @@ void PluginMain(PA_long32 selector, PA_PluginParameters params) {
 
 void PQ_EXECUTE(PA_PluginParameters params) {
     
-    sLONG_PTR *pResult = (sLONG_PTR *)params->fResult;
+//    sLONG_PTR *pResult = (sLONG_PTR *)params->fResult;
     PackagePtr pParams = (PackagePtr)params->fParameters;
     
     C_TEXT Param1_connectdb;/* connect */
@@ -62,7 +62,7 @@ void PQ_EXECUTE(PA_PluginParameters params) {
         paramCount = PA_GetCollectionLength(Param3_params);
     }
     
-    bool useParams = (paramCount > 1);
+    bool useParams = (paramCount > 0);
     
     if(PQstatus(conn) == CONNECTION_OK) {
         
@@ -83,7 +83,6 @@ void PQ_EXECUTE(PA_PluginParameters params) {
             
             std::vector<char *> paramValues;
             std::vector<int> paramLengths;
-            
             std::vector<Oid> paramTypes;
             std::vector<int> paramFormats;
             
@@ -99,15 +98,17 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                     case eVK_Unistring:
                     {
                         PA_Unistring u = PA_GetStringVariable(v);
+                        
                         C_TEXT t;
                         t.setUTF16String((const PA_Unichar *)u.fString, u.fLength);
                         CUTF8String u8;
                         t.copyUTF8String(&u8);
-                        paramStringValues.push_back(u8);
+                        
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                         break;
                    
@@ -120,11 +121,12 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                         std::vector<char> buf(32 + precision);
                         snprintf((char *)&buf[0], buf.size(), "%.*f", precision, r);
                         CUTF8String u8((const uint8_t *)&buf[0]);
-                        paramStringValues.push_back(u8);
+                        
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                         break;
                         
@@ -134,11 +136,12 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                         std::vector<char> buf(32);
                         snprintf((char *)&buf[0], buf.size(), "%d", t);
                         CUTF8String u8((const uint8_t *)&buf[0]);
-                        paramStringValues.push_back(u8);
+
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                         break;
                         
@@ -148,22 +151,24 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                         std::vector<char> buf(32);
                         snprintf((char *)&buf[0], buf.size(), "%d", t);
                         CUTF8String u8((const uint8_t *)&buf[0]);
-                        paramStringValues.push_back(u8);
+                        
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                         break;
                         
                     case eVK_Null:
                     {
                         CUTF8String u8 = (const uint8_t *)"null";
-                        paramStringValues.push_back(u8);
+                        
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                         break;
                         
@@ -171,11 +176,12 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                     {
                         char b = PA_GetBooleanVariable(v);
                         CUTF8String u8 = b ? (const uint8_t *)"true" : (const uint8_t *)"false";
-                        paramStringValues.push_back(u8);
+                        
                         paramTypes.push_back(0);
                         paramFormats.push_back(0);
-                        paramValues.push_back((char *)u8.c_str());
+                        paramStringValues.push_back(u8);
                         paramLengths.push_back((int)u8.size());
+                        paramValues.push_back((char *)"");
                     }
                             break;
                         
@@ -185,6 +191,10 @@ void PQ_EXECUTE(PA_PluginParameters params) {
   
             }
             
+            for(unsigned int i = 0; i < paramValues.size(); ++i) {
+                paramValues[i] = (char *)paramStringValues[i].c_str();
+            }
+              
             result = PQexecParams(conn,
                                      (const char *)command.c_str(),
                                      paramCount,
@@ -235,12 +245,24 @@ void PQ_EXECUTE(PA_PluginParameters params) {
                 int countRows = PQntuples(result);
                 int countFields = PQnfields(result);
                 
+                time_t startTime = time(0);
+                
                 for(unsigned int r = 0; r < countRows;++r)
                 {
                     PA_ObjectRef resultRow = PA_CreateObject();
                     
                     for(unsigned int c = 0; c < countFields;++c)
                     {
+                        
+                        time_t now = time(0);
+                        time_t elapsedTime = abs(startTime - now);
+                        if(elapsedTime > 0)
+                        {
+                            startTime = now;
+                            PA_YieldAbsolute();
+                            NSLog(@"PA_YieldAbsolute");
+                        }
+                        
                         char *fieldName = PQfname(result, c);
                         char *fieldValue = PQgetvalue(result, r, c);
                         int fieldIsNull = PQgetisnull(result, r, c);
